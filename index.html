@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <div class="sidepop-up">
+    <div class="sidepop-up dark">
         <div class="head">
             <div class="container">
                 <div class="profile">
@@ -32,7 +32,7 @@
         </div>
         <div class="chat">
             <div class="date">Сегодня</div>
-            <div class="messages">
+            <div class="messages" id="chat-container">
                 <!-- If chat is empty -->
                 <!--<div class="empty-chat">
                     Отправьте нам сообщение.<br>Мы ответим Вам в ближайшее время!
@@ -43,6 +43,37 @@
                     <div class="message-group">
                         <div class="message">
                             Hello, I’m experiencing an issue with my account. Could you please help me resolve it?
+                            <div class="voice-msg-container">
+                                <div class="play-voice-msg-btn">
+                                    <img src="source/svg/play_voice_msg.svg" alt="play_voice">
+                                </div>
+                                <div class="waves">
+                                    <div style="height: 10px;"></div>
+                                    <div style="height: 18px;"></div>
+                                    <div style="height: 6px;"></div>
+                                    <div style="height: 11px;"></div>
+                                    <div style="height: 8px;"></div>
+                                    <div style="height: 18px;"></div>
+                                    <div style="height: 15px;"></div>
+                                    <div style="height: 10px;"></div>
+                                    <div style="height: 6px;"></div>
+                                    <div style="height: 10px;"></div>
+                                    <div style="height: 11px;"></div>
+                                    <div style="height: 12px;"></div>
+                                    <div style="height: 14px;"></div>
+                                    <div style="height: 18px;"></div>
+                                    <div style="height: 10px;"></div>
+                                    <div style="height: 14px;"></div>
+                                    <div style="height: 8px;"></div>
+                                    <div style="height: 14px;"></div>
+                                </div>
+                                <div class="timer">
+                                    <span>00:24</span>
+                                </div>
+                                <div class="delete-msg-btn">
+                                    <img src="source/svg/delete_msg.svg" alt="delete_voice">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="sender">
@@ -54,10 +85,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="message-container">
+                <div class="message-container" data-support-team-msg>
                     <div class="message-group">
                         <div class="message">
-                            Of course! I’d be happy to assist you. Could you please describe the problem you’re having?                    
+                            Of course!                    
                         </div>
                     </div>
                     <div class="sender">
@@ -87,10 +118,55 @@
                         </div>
                     </div>
                 </div>
-                <div class="message-container">
+                <div class="message-container" data-support-team-msg>
                     <div class="message-group">
                         <div class="message">
-                            Thank you for the information. Have you tried resetting your password yet?                    
+                            Thank you for the information. Have you tried resetting your password yet?  
+                            <!-- Pinned voice message -->  
+                            <!--<div class="voice-msg-container">
+                                <div class="play-voice-msg-btn">
+                                    <img src="source/svg/play_voice_msg.svg" alt="play_voice">
+                                </div>
+                                <div class="waves">
+                                    <div style="height: 10px;"></div>
+                                    <div style="height: 18px;"></div>
+                                    <div style="height: 6px;"></div>
+                                    <div style="height: 11px;"></div>
+                                    <div style="height: 8px;"></div>
+                                    <div style="height: 18px;"></div>
+                                    <div style="height: 15px;"></div>
+                                    <div style="height: 10px;"></div>
+                                    <div style="height: 6px;"></div>
+                                    <div style="height: 10px;"></div>
+                                    <div style="height: 11px;"></div>
+                                    <div style="height: 12px;"></div>
+                                    <div style="height: 14px;"></div>
+                                    <div style="height: 18px;"></div>
+                                    <div style="height: 10px;"></div>
+                                    <div style="height: 14px;"></div>
+                                    <div style="height: 8px;"></div>
+                                    <div style="height: 14px;"></div>
+                                </div>
+                                <div class="timer">
+                                    <span>00:24</span>
+                                </div>
+                                <div class="delete-msg-btn">
+                                    <img src="source/svg/delete_msg.svg" alt="delete_voice">
+                                </div>
+                            </div>-->              
+                            <!-- Pinned document -->
+                            <!--<div class="doc-container">
+                                <div class="open-doc-btn">
+                                    <img src="source/svg/document.svg" alt="doc">
+                                </div>
+                                <div class="doc-info">
+                                    <span class="doc-name">Screenshot 2024-10-21</span>
+                                    <span class="doc-size">32kB</span>
+                                </div>
+                                <div class="delete-msg-btn">
+                                    <img src="source/svg/delete_msg.svg" alt="delete_voice">
+                                </div>
+                            </div>-->
                         </div>
                     </div>
                     <div class="sender">
@@ -102,13 +178,15 @@
                         </div>
                     </div>
                 </div>
+                
+
             </div>
         </div>
         <div class="message-input">
             
             <div class="msg-input-fields">
-                <!-- Record voice message -->
-                <div class="voice-msg-container">
+                <!-- Recording voice message -->
+                <!--<div class="voice-msg-container">
                     <div class="waves">
                         <div style="height: 10px;"></div>
                         <div style="height: 18px;"></div>
@@ -132,36 +210,204 @@
                     <div class="timer">
                         <span>00:24</span>
                     </div>
-                </div>
+                </div>-->
                 
+                <!-- Recorded voice message -->
+                <!--<div class="voice-msg-container">
+                    <div class="play-voice-msg-btn">
+                        <img src="source/svg/play_voice_msg.svg" alt="play_voice">
+                    </div>
+                    <div class="waves">
+                        <div style="height: 10px;"></div>
+                        <div style="height: 18px;"></div>
+                        <div style="height: 6px;"></div>
+                        <div style="height: 11px;"></div>
+                        <div style="height: 8px;"></div>
+                        <div style="height: 18px;"></div>
+                        <div style="height: 15px;"></div>
+                        <div style="height: 10px;"></div>
+                        <div style="height: 6px;"></div>
+                        <div style="height: 10px;"></div>
+                        <div style="height: 11px;"></div>
+                        <div style="height: 12px;"></div>
+                        <div style="height: 14px;"></div>
+                        <div style="height: 18px;"></div>
+                        <div style="height: 10px;"></div>
+                        <div style="height: 14px;"></div>
+                        <div style="height: 8px;"></div>
+                        <div style="height: 14px;"></div>
+                    </div>
+                    <div class="timer">
+                        <span>00:24</span>
+                    </div>
+                    <div class="delete-msg-btn">
+                        <img src="source/svg/delete_msg.svg" alt="delete_voice">
+                    </div>
+                </div>-->
+
+                <!-- Play voice message -->
+                <!--<div class="voice-msg-container">
+                    <div class="play-voice-msg-btn">
+                        <img src="source/svg/pause_voice_msg.svg" alt="play_voice">
+                    </div>
+                    <div class="waves">
+                        <div style="height: 10px;background-color: #006fff;"></div>
+                        <div style="height: 18px;background-color: #006fff;"></div>
+                        <div style="height: 6px;background-color: #006fff;"></div>
+                        <div style="height: 11px;background-color: #006fff;"></div>
+                        <div style="height: 8px;background-color: #006fff;"></div>
+                        <div style="height: 18px;background-color: #006fff;"></div>
+                        <div style="height: 15px;background-color: #006fff;"></div>
+                        <div style="height: 10px;"></div>
+                        <div style="height: 6px;"></div>
+                        <div style="height: 10px;"></div>
+                        <div style="height: 11px;"></div>
+                        <div style="height: 12px;"></div>
+                        <div style="height: 14px;"></div>
+                        <div style="height: 18px;"></div>
+                        <div style="height: 10px;"></div>
+                        <div style="height: 14px;"></div>
+                        <div style="height: 8px;"></div>
+                        <div style="height: 14px;"></div>
+                    </div>
+                    <div class="timer">
+                        <span>00:10/00:24</span>
+                    </div>
+                    <div class="delete-msg-btn">
+                        <img src="source/svg/delete_msg.svg" alt="delete_voice">
+                    </div>
+                </div>-->
+
+                <!-- Send document -->
+                <!--<div class="doc-container">
+                    <div class="open-doc-btn">
+                        <img src="source/svg/document.svg" alt="doc">
+                    </div>
+                    <div class="doc-info">
+                        <span class="doc-name">Screenshot 2024-10-21</span>
+                        <span class="doc-size">32kB</span>
+                    </div>
+                    <div class="delete-msg-btn">
+                        <img src="source/svg/delete_msg.svg" alt="delete_voice">
+                    </div>
+                </div>-->
+            
                 <!-- Text message -->
                 <div class="input-field">
-                    <textarea class="input-message" placeholder="Введите свое сообщение..."></textarea>
+                    <textarea class="input-message" id="input-message" placeholder="Введите свое сообщение..."></textarea>
                 </div>
             </div>
             
             
             <div class="buttons">
                 <!-- Recording voice message -->
-                 <div>
-                    <img src="source/svg/record_voice_msg.svg" alt="record_voice_msg">
-                 </div>
-                <!-- Write text message -->
                 <!--<div>
-                    <img src="source/svg/voice_msg.svg" alt="voice_msg">
+                    <img src="source/svg/record_voice_msg.svg" alt="record_voice_msg">
                 </div>-->
+                <!-- Write text message -->
+                <div>
+                    <img src="source/svg/voice_msg.svg" alt="voice_msg">
+                </div>
                 <div>
                     <img src="source/svg/pin_msg_btn.svg" alt="pin_msg">
                 </div>
-                <div>
+                <div onclick="sendMessage()">
                     <img src="source/svg/send_msg_btn.svg" alt="send_btn">
                 </div>
             </div>
         </div>
-
-
-
     </div>
-
 </body>
+<script>
+    function createElement(opts = {}) {
+        let ele = document.createElement('div');
+        if('class' in opts) {
+            if(!Array.isArray(opts.class)) {
+                opts.class = [ opts.class ];
+            }
+            ele.classList.add(...opts.class);
+        }
+        return ele;
+    }
+
+    function sendMessage() {
+        console.log('send message');
+        
+        const chatContainer = document.getElementById('chat-container')
+        const messageInput = document.getElementById('input-message')
+        const messageText = messageInput.value.trim()
+
+        if(messageText === '') return
+
+        const message = createElement({ class: 'message' })
+        message.textContent = messageText
+
+        const currentDate = new Date()
+        const hours = String(currentDate.getHours()).padStart(2, '0')
+        const minutes = String(currentDate.getMinutes()).padStart(2, '0')
+        const sendingTime = `${hours}:${minutes}`
+        
+        const messageContainers = document.getElementsByClassName('message-container')
+        const lastMessageContainer = messageContainers[messageContainers.length - 1]
+
+        if(lastMessageContainer.hasAttribute('data-support-team-msg')) {
+            const messageContainer = createElement({ class: 'message-container' })
+            const messageGroup = createElement({ class: 'message-group' })
+            messageGroup.appendChild(message)
+
+            const senderContainer = createElement({ class: 'sender' })
+            const sendTime = createElement({ class: 'send-time' })
+            const senderAvatar = createElement({ class: 'sender-avatar'})
+            senderAvatar.innerHTML+= '<img src="source/svg/user_avatar.svg" alt="user">'
+            
+            sendTime.textContent = sendingTime
+
+            senderContainer.appendChild(sendTime)
+            senderContainer.appendChild(senderAvatar)
+
+            messageContainer.appendChild(messageGroup)
+            messageContainer.appendChild(senderContainer)
+
+            chatContainer.appendChild(messageContainer)
+        } else {
+            const messageGroup = lastMessageContainer.querySelector('.message-group')
+            messageGroup.appendChild(message)
+
+            lastMessageContainer.querySelector('.send-time').textContent = sendingTime
+        }
+        
+        messageInput.value = ''
+        
+    }
+
+    function animateIn() {
+		let delay = 35; // Some times it won't animate correctly without this
+		let ele = this.ele;
+		setTimeout(() => {
+				ele.lineContainer.style.opacity = 1;
+				ele.lineContainer.style.maxHeight = '200px';
+				ele.lineContainer.style.transform = 'translateX(0px) scale(1)';
+			}, delay);
+		
+		let otherEleList = [ ele.profileImg, ele.name, ...ele.texts ];
+		
+		if('img' in ele) {
+			otherEleList.push(ele.img);
+		}
+		else if('richBody' in ele) {
+			otherEleList.push(ele.richBody);
+		}
+		
+		delay += 40;
+		
+		otherEleList.forEach((e, i) => {
+			setTimeout(() => {
+					e.style.opacity = 1;
+					e.style.transform = 'translateY(0px)';
+				}, delay += 50);
+		});
+		
+		ele.texts.forEach((n, i, arr) => setTimeout(() => n.style.opacity = 1, 70 * (i + 3) + delay));
+	}
+</script>
 </html>
