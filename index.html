@@ -394,6 +394,8 @@
             lastMessageContainer.querySelector('.send-time').textContent = sendingTime
         }
         
+        chatContainer.scrollTop = chatContainer.scrollHeight
+
         inputMessage.value = ''
         inputMessage.style.height = 'auto'
     }
