@@ -319,6 +319,22 @@
     border-radius: 12px 12px 0 12px;
 }
 
+.messages .message-container:nth-child(odd) .message{
+    transform: translateX(-20px); 
+    animation: fadeInMessage 0.5s forwards;
+}
+
+@keyframes fadeInMessage {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .sender {
     display: flex;
     flex-direction: column;
