@@ -352,8 +352,7 @@
         console.log('send message');
         
         const chatContainer = document.getElementById('chat-container')
-        const messageInput = document.getElementById('input-message')
-        const messageText = messageInput.value.trim()
+        const messageText = inputMessage.value.trim()
 
         if(messageText === '') return
 
@@ -387,24 +386,20 @@
             messageContainer.appendChild(senderContainer)
 
             chatContainer.appendChild(messageContainer)
-            animateIn(messageContainer)
             
         } else {
             const messageGroup = lastMessageContainer.querySelector('.message-group')
             messageGroup.appendChild(message)
-            animateIn(message)
 
             lastMessageContainer.querySelector('.send-time').textContent = sendingTime
         }
         
-        messageInput.value = ''
         inputMessage.value = ''
         inputMessage.style.height = 'auto'
     }
 
     
 
-    
     /*function animateIn(ele) {
         let delay = 35; // Небольшая задержка для корректного запуска анимации
         
