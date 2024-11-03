@@ -10,8 +10,11 @@
 }
 
 .sidepop-up {
+    zoom: 0.8;
     width: 476px;
     height: 761px;
+    /*width: 376px;
+    height: 560px;*/
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -108,6 +111,14 @@
 
 .close-btn {
     cursor: pointer;
+}
+
+.close-btn svg path {
+    fill: black;
+}
+
+.dark .close-btn svg path {
+    fill: white;
 }
 
 .chat {
@@ -480,7 +491,7 @@
 .delete-msg-btn{
     position: relative;
     margin-left: 12px;
-    top: 3px;
+    top: 1px;
 }
 
 .waves {
@@ -536,6 +547,43 @@
     text-align: left;
     color: #6d748a;
 }
+
+/* show popup checkbox */
+.show-popup-btn {
+    height: 72px;
+    width: 72px;
+    background-color: #006fff;
+    border-radius: 72px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    top: 696px;
+    left: 308px;
+}
+
+.show-popup-btn input{
+    height: 72px;
+    width: 72px;
+    border-radius: 72px;
+    opacity: 0;
+    position: absolute;
+}
+
+.show-popup-btn:has(#show-popup-checkbox:checked) + .sidepop-up {
+    display: none; 
+}
+
+/*#show-popup-checkbox ~ .icon {
+    content: url('../source/svg/show_popup_btn.svg'); 
+}
+
+#show-popup-checkbox:checked ~ .icon {
+    content: url('../source/svg/close_btn.svg'); 
+}*/
+
 
 
 

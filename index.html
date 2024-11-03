@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
+    <div class="show-popup-btn" id="show-popup-btn">
+        <img class="icon" id="icon" src="source/svg/close_btn.svg" alt="">
+        <input type="checkbox" onchange="changeIcon()" id="show-popup-checkbox">
+    </div>
+
     <div class="sidepop-up dark">
         <div class="head">
             <div class="container">
@@ -26,7 +30,9 @@
                     </div>
                 </div>
                 <div class="close-btn">
-                    <img src="source/svg/close_btn.svg" alt="close_btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.8894 17.2728L11.6163 9.99971L18.8894 2.72661C19.1037 2.51229 19.2242 2.2216 19.2242 1.91849C19.2242 1.61539 19.1037 1.3247 18.8894 1.11037C18.6751 0.896042 18.3844 0.775635 18.0813 0.775635C17.7782 0.775635 17.4875 0.896042 17.2732 1.11037L10.0001 8.38347L2.72698 1.11037C2.51265 0.896042 2.22196 0.775635 1.91886 0.775635C1.61575 0.775635 1.32506 0.896042 1.11074 1.11037C0.896409 1.3247 0.776002 1.61539 0.776002 1.91849C0.776002 2.2216 0.896409 2.51229 1.11074 2.72661L8.38383 9.99971L1.11074 17.2728C0.896409 17.4871 0.776001 17.7778 0.776001 18.0809C0.776001 18.384 0.896409 18.6747 1.11074 18.8891C1.32506 19.1034 1.61575 19.2238 1.91886 19.2238C2.22196 19.2238 2.51265 19.1034 2.72698 18.8891L10.0001 11.616L17.2732 18.8891C17.4875 19.1034 17.7782 19.2238 18.0813 19.2238C18.3844 19.2238 18.6751 19.1034 18.8894 18.8891C19.1037 18.6747 19.2242 18.384 19.2242 18.0809C19.2242 17.7778 19.1037 17.4871 18.8894 17.2728Z" fill="white"/>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -152,7 +158,6 @@
             </div>
         </div>
         <div class="message-input">
-            
             <div class="msg-input-fields">
                 <!-- Recording voice message -->
                 <!--<div class="voice-msg-container">
@@ -266,8 +271,6 @@
                     <textarea class="input-message" id="input-message" placeholder="Введите свое сообщение..."></textarea>
                 </div>
             </div>
-            
-            
             <div class="buttons">
                 <!-- Recording voice message -->
                 <!--<div>
@@ -286,8 +289,20 @@
             </div>
         </div>
     </div>
+
 </body>
 <script>
+    function changeIcon(){
+        const checkbox = document.getElementById('show-popup-checkbox')
+        const icon = document.getElementById('icon')
+            
+        if(checkbox.checked) {
+            icon.src = 'source/svg/show_popup_btn.svg'
+        } else {
+            icon.src = 'source/svg/close_btn.svg'
+        }
+    }
+
     const inputMessage = document.querySelector('.input-message')
         
     function adjustHeight() {
