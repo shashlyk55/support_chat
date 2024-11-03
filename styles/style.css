@@ -171,6 +171,7 @@
     /* white theme */
     /*background-color: #D7D9E0;
     color: #1E1F25;*/
+    z-index: 7;
 }
 
 .dark .chat .date {
@@ -274,6 +275,7 @@
     /* white theme */
     /*color: #1E1F25;
     background-color: #D7D9E0;*/
+    z-index: 5;
 }
 
 @media (max-width: 375px){
