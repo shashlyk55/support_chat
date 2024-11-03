@@ -161,6 +161,7 @@
     line-height: 16px;
     text-align: left;
     position: absolute;
+    /*position: relative;*/
     border: 1px solid #3E414E;
     background-color: #D7D9E0;
     color: #1E1F25;
@@ -176,7 +177,6 @@
     background-color: #3E414E;
     color: #F7F8F8;
 }
-
 
 .empty-chat {
     font-size: 14px;
@@ -309,6 +309,19 @@
 .messages .message-container:nth-child(even) .message{
     background: linear-gradient(265.56deg, #246CF9 -0.27%, #1E68F6 -0.26%, #0047D0 98.59%);
     color: #ffffff;
+    transform: translateX(40px);
+    animation: appendMessageFromRight 0.8s forwards;
+}
+
+@keyframes appendMessageFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .messages .message-container:nth-child(even) .message:only-child{
@@ -320,14 +333,14 @@
 }
 
 .messages .message-container:nth-child(odd) .message{
-    transform: translateX(-20px); 
-    animation: fadeInMessage 0.5s forwards;
+    transform: translateX(-40px); 
+    animation: appendMessageFromLeft 0.8s forwards;
 }
 
-@keyframes fadeInMessage {
+@keyframes appendMessageFromLeft {
     0% {
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateX(-40px);
     }
     100% {
         opacity: 1;
