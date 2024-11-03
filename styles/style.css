@@ -9,12 +9,19 @@
     /*color: #373A43;*/
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 16px;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
 .sidepop-up {
     zoom: 0.8;
     width: 476px;
     height: 761px;
-    /*width: 376px;
-    height: 560px;*/
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -255,7 +262,7 @@
 .message {
     /*max-width: 348px;*/
     /*width:auto;*/
-    width: fit-content;
+    /*width: fit-content;*/
     max-width: 348px;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -282,12 +289,12 @@
     .message {
         font-size: 14px;
         /*width: auto;*/
-        max-width: 80svw;
+        /*max-width: 80svw;*/
     }
 }
 @media (max-width: 340px){
     .message {
-        max-width: 78svw;
+        /*max-width: 78svw;*/
     }
 }
 
@@ -311,7 +318,7 @@
 .messages .message-container:nth-child(even) .message{
     background: linear-gradient(265.56deg, #246CF9 -0.27%, #1E68F6 -0.26%, #0047D0 98.59%);
     color: #ffffff;
-    transform: translateX(40px);
+    /*transform: translateX(40px);*/
     animation: appendMessageFromRight 0.8s forwards;
 }
 
@@ -335,7 +342,7 @@
 }
 
 .messages .message-container:nth-child(odd) .message{
-    transform: translateX(-40px); 
+    /*transform: translateX(-40px); */
     animation: appendMessageFromLeft 0.8s forwards;
 }
 
@@ -590,9 +597,9 @@
     align-items: center;
     justify-content: center;
 
-    position: relative;
+    /*position: relative;
     top: 696px;
-    left: 308px;
+    left: 308px;*/
 }
 
 .show-popup-btn input{
@@ -607,13 +614,6 @@
     display: none; 
 }
 
-/*#show-popup-checkbox ~ .icon {
-    content: url('../source/svg/show_popup_btn.svg'); 
-}
-
-#show-popup-checkbox:checked ~ .icon {
-    content: url('../source/svg/close_btn.svg'); 
-}*/
 
 
 
