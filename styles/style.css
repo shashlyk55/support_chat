@@ -268,8 +268,13 @@
 @media (max-width: 375px){
     .message {
         font-size: 14px;
-        width: auto;
-        /*max-width: calc(80svw);*/
+        /*width: auto;*/
+        max-width: 80svw;
+    }
+}
+@media (max-width: 340px){
+    .message {
+        max-width: 78svw;
     }
 }
 
@@ -384,6 +389,8 @@
 }
 
 .input-field > .input-message {
+    overflow-y: auto;
+
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -401,9 +408,9 @@
     /*color: #373A43;*/
 }
 
-.input-field > .input-message:focus{
+/*.input-field > .input-message:focus{
     height: calc(24px * 6);
-}
+}*/
 
 @media (max-width: 375px){
     .input-field > .input-message {

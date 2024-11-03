@@ -319,6 +319,23 @@
     </div>
 </body>
 <script>
+    const inputMessage = document.querySelector('.input-message')
+        
+    function adjustHeight() {
+        inputMessage.style.height = 'auto'; // Сбрасываем высоту, чтобы пересчитать
+        let scrollHeight = inputMessage.scrollHeight;
+        
+        if (scrollHeight > (window.innerWidth > 375 ? 144 : 108) ) { // 6 строк по 24px каждая (line-height = 24px)
+            inputMessage.style.height = window.innerWidth > 375 ? '144px' : '108px'; // Ограничиваем высоту на 6 строк
+            inputMessage.style.overflowY = 'auto'; // Появится прокрутка, если текст больше
+        } else {
+            inputMessage.style.height = scrollHeight + 'px'; // Подстраиваем высоту под контент
+            inputMessage.style.overflowY = 'hidden'; // Убираем прокрутку, если не нужна
+        }
+    }
+    inputMessage.addEventListener('input', adjustHeight)
+
+
     function createElement(opts = {}) {
         let ele = document.createElement('div');
         if('class' in opts) {
@@ -331,6 +348,7 @@
     }
 
     function sendMessage() {
+        
         console.log('send message');
         
         const chatContainer = document.getElementById('chat-container')
@@ -369,45 +387,44 @@
             messageContainer.appendChild(senderContainer)
 
             chatContainer.appendChild(messageContainer)
+            animateIn(messageContainer)
+            
         } else {
             const messageGroup = lastMessageContainer.querySelector('.message-group')
             messageGroup.appendChild(message)
+            animateIn(message)
 
             lastMessageContainer.querySelector('.send-time').textContent = sendingTime
         }
         
         messageInput.value = ''
-        
+        inputMessage.value = ''
+        inputMessage.style.height = 'auto'
     }
 
-    function animateIn() {
-		let delay = 35; // Some times it won't animate correctly without this
-		let ele = this.ele;
-		setTimeout(() => {
-				ele.lineContainer.style.opacity = 1;
-				ele.lineContainer.style.maxHeight = '200px';
-				ele.lineContainer.style.transform = 'translateX(0px) scale(1)';
-			}, delay);
-		
-		let otherEleList = [ ele.profileImg, ele.name, ...ele.texts ];
-		
-		if('img' in ele) {
-			otherEleList.push(ele.img);
-		}
-		else if('richBody' in ele) {
-			otherEleList.push(ele.richBody);
-		}
-		
-		delay += 40;
-		
-		otherEleList.forEach((e, i) => {
-			setTimeout(() => {
-					e.style.opacity = 1;
-					e.style.transform = 'translateY(0px)';
-				}, delay += 50);
-		});
-		
-		ele.texts.forEach((n, i, arr) => setTimeout(() => n.style.opacity = 1, 70 * (i + 3) + delay));
-	}
+    
+
+    
+    /*function animateIn(ele) {
+        let delay = 35; // Небольшая задержка для корректного запуска анимации
+        
+        setTimeout(() => {
+            ele.style.opacity = 1;
+            ele.style.transform = 'translateX(0px) scale(1)';
+        }, delay);
+
+        let otherEleList = [ele];
+        
+        // Применяем дополнительные эффекты к другим элементам внутри сообщения
+        delay += 40;
+        
+        otherEleList.forEach((e) => {
+            setTimeout(() => {
+                e.style.opacity = 1;
+                e.style.transform = 'translateY(0px)';
+            }, delay += 50);
+        });
+    }*/
+
 </script>
 </html>
