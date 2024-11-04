@@ -27,7 +27,10 @@ body {
     justify-content: flex-end;
     color: #373A43;
 
-    overflow: hidden
+    overflow: hidden;
+
+    opacity: 1;
+    transition: opacity 0.3s ease, height 0.6s ease;
 }
 
 @media (max-width: 375px){
@@ -138,7 +141,8 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    background-color: #eeeeee;
+    /*background-color: #eeeeee;*/
+    background-color: #ededf1;
     /* black theme */
     /*background-color: #2f313b;*/
     /* white theme */
@@ -586,8 +590,57 @@ body {
 }
 
 .show-popup-btn:has(#show-popup-checkbox:checked) + .sidepop-up {
-    display: none; 
+    /*display: none; */
+    opacity: 0;
+    height: 0;
 }
+
+/* download doc */
+.download-doc-container {
+    margin: 24px 0;
+    border: 1px #D7D9E0 dashed;
+    background-color: #F7F8F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.dark .download-doc-container {
+    border: 1px #585E71 dashed;
+    background-color: #484C5C;
+}
+
+.download-doc-container > .put-file-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7.5px;
+}
+
+.dark .put-file-icon > svg > path {
+    fill: #F7F8F8;
+}
+
+.put-file-icon > svg > path {
+    fill: #1E1F25;
+}
+
+.dark .put-file-icon > p {
+    color: #F7F8F8;
+}
+
+.put-file-icon > p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+    color: #1E1F25;
+}
+
 
 
 
