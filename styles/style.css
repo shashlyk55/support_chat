@@ -160,6 +160,7 @@ body {
 }
 
 .chat .date {
+    margin-top: 8px;
     padding: 4px 16px;
     border-radius: 32px;
     width: fit-content;
@@ -231,6 +232,10 @@ body {
 
 .messages .message-container:nth-child(even) {
     flex-direction: row-reverse;
+}
+
+.messages .message-container:first-child {
+    margin-top: 48px;
 }
 
 .message-group {
