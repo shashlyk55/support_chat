@@ -36,9 +36,14 @@ body {
 @media (max-width: 476px){
     .sidepop-up {
         zoom: 1;
-        /*width: auto;*/
         width: 100%;
-        height: 98svh;
+        /*height: 98svh;*/
+        height: 100%;
+    }
+    .show-popup-btn {
+        visibility: hidden;
+        position: absolute; 
+
     }
 }
 
@@ -154,6 +159,8 @@ body {
 @media (max-width: 476px) {
     .chat {
         padding: 1px 16px;
+        height: 100%;
+        max-height: none;
     }
 }
 
@@ -268,7 +275,6 @@ body {
 
 .message {
     max-width: 348px;
-    /*max-width: 100%;*/
     word-wrap: break-word;
     overflow-wrap: break-word;
     font-size: 16px;

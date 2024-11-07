@@ -300,22 +300,17 @@
 <script>
     
     const adjustMessageWidth = () => {
-            const messages = document.querySelector('.messages')
-            const messageContainers = messages.querySelectorAll('.message-container')
-            
-            const screenWidth = window.innerWidth;
+        const screenWidth = window.innerWidth;
 
-            document.querySelectorAll('.message').forEach((message) => {
-                if(screenWidth < 476 && screenWidth >= 375){
-                    message.style.maxWidth = (screenWidth - 112) + 'px'
-                } else if(screenWidth < 375) {
-                    message.style.maxWidth = (screenWidth - 72) + 'px'
-                }
-            })
-        };
-
+        document.querySelectorAll('.message').forEach((message) => {
+            if(screenWidth < 476 && screenWidth >= 375){
+                message.style.maxWidth = (screenWidth - 112) + 'px'
+            } else if(screenWidth < 375) {
+                message.style.maxWidth = (screenWidth - 72) + 'px'
+            }
+        })
+    };
     adjustMessageWidth();
-
     window.addEventListener('resize', adjustMessageWidth);
 
     const inputMessage = document.querySelector('.input-message')
