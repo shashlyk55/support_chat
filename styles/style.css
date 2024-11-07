@@ -43,7 +43,10 @@ body {
     .show-popup-btn {
         visibility: hidden;
         position: absolute; 
-
+    }
+    .show-popup-btn:has(#show-popup-checkbox:checked) {
+        position: relative;
+        visibility: visible;
     }
 }
 
@@ -610,7 +613,6 @@ body {
 }
 
 .show-popup-btn:has(#show-popup-checkbox:checked) + .sidepop-up {
-    /*display: none; */
     opacity: 0;
     height: 0;
 }
