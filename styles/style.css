@@ -647,6 +647,7 @@ body {
     .show-popup-btn:has(#show-popup-checkbox:checked) {
         position: relative;
         visibility: visible;
+        margin: 20px;
     }
     
     .head {
