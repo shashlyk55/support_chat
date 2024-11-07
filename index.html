@@ -298,6 +298,26 @@
 
 </body>
 <script>
+    
+    const adjustMessageWidth = () => {
+            const messages = document.querySelector('.messages')
+            const messageContainers = messages.querySelectorAll('.message-container')
+            
+            const screenWidth = window.innerWidth;
+
+            document.querySelectorAll('.message').forEach((message) => {
+                if(screenWidth < 476 && screenWidth >= 375){
+                    message.style.maxWidth = (screenWidth - 112) + 'px'
+                } else if(screenWidth < 375) {
+                    message.style.maxWidth = (screenWidth - 72) + 'px'
+                }
+            })
+        };
+
+    adjustMessageWidth();
+
+    window.addEventListener('resize', adjustMessageWidth);
+
     const inputMessage = document.querySelector('.input-message')
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -393,12 +413,16 @@
             lastMessageContainer.querySelector('.send-time').textContent = sendingTime
         }
         
+        adjustMessageWidth();
+        
         chatContainer.scrollTop = chatContainer.scrollHeight
 
         inputMessage.value = ''
         inputMessage.style.height = 'auto'
         inputMessage.focus()
+
     }
+
     inputMessage.addEventListener('keydown', (event) => {
         if(event.key === 'Enter') {
             event.preventDefault()
