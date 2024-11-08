@@ -12,7 +12,7 @@
         <input type="checkbox" onchange="changeIcon()" id="show-popup-checkbox">
     </div>
 
-    <div class="sidepop-up dark">
+    <div class="sidepop-up ">
         <div class="head">
             <div class="container">
                 <div class="profile">
@@ -55,12 +55,12 @@
                 <!-- If chat has messages -->
                 <div class="message-container">
                     <div class="message-group">
-                        <div class="message">
+                        <div class="message read-message">
                             Hello, I’m experiencing an issue with my account. Could you please help me resolve it?
                             <div class="read-check">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 5.09904L3.86205 10L1 7.22524L2.13433 6.11744L3.86205 7.82647L7.86748 4L9 5.09904Z" fill="#F7F8F8"/>
-                                    <path d="M13 5.09904L7.86205 10L5 7.22524L6.13433 6.11744L7.86205 7.82647L11.8675 4L13 5.09904Z" fill="#F7F8F8"/>
+                                    <path d="M9 5.09904L3.86205 10L1 7.22524L2.13433 6.11744L3.86205 7.82647L7.86748 4L9 5.09904Z"/>
+                                    <path d="M13 5.09904L7.86205 10L5 7.22524L6.13433 6.11744L7.86205 7.82647L11.8675 4L13 5.09904Z"/>
                                 </svg>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="message-container">
                     <div class="message-group">
-                        <div class="message">
+                        <div class="message read-message">
                             Sure.
                             <div class="read-check">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +100,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="message">
+                        <div class="message read-message">
                             Every time I try, I receive an “incorrect password” message, even though I’m sure the password is correct.  
                             <div class="read-check">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -388,7 +388,7 @@
 
         if(text === '') return
 
-        const message = createElement({ class: 'message' })
+        const message = createElement({ class: ['message', 'unread-message'] })
         message.textContent = text
 
         const messageReadCheck = createElement({ class: 'read-check' })

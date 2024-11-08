@@ -288,6 +288,17 @@ body {
     animation: appendMessageFromRight 0.3s forwards;
 }
 
+@keyframes appendMessageFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .messages .message-container:nth-child(odd) .message {
     padding: 12px 24px 12px 12px;
 }
@@ -298,15 +309,16 @@ body {
     right: 5px;
 }
 
-@keyframes appendMessageFromRight {
-    0% {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.message.unread-message > .read-check path {
+    fill: #B4B7C5;
+}
+
+.message.read-message > .read-check path {
+    fill: #373A43;
+}
+
+.dark .message.read-message > .read-check path {
+    fill: #F7F8F8;
 }
 
 .messages .message-container:nth-child(even) .message:only-child{
