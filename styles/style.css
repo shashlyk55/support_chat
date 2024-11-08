@@ -250,7 +250,7 @@ body {
     font-weight: 400;
     line-height: 25.6px;
     text-align: left;
-    padding: 12px;
+    padding: 12px;  
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -264,7 +264,6 @@ body {
     /*color: #1E1F25;
     background-color: #D7D9E0;*/
 }
-
 
 .dark .message {
     color: #ffffff;
@@ -286,13 +285,23 @@ body {
 .messages .message-container:nth-child(even) .message{
     background: linear-gradient(265.56deg, #246CF9 -0.27%, #1E68F6 -0.26%, #0047D0 98.59%);
     color: #ffffff;
-    animation: appendMessageFromRight 0.8s forwards;
+    animation: appendMessageFromRight 0.3s forwards;
+}
+
+.messages .message-container:nth-child(odd) .message {
+    padding: 12px 24px 12px 12px;
+}
+
+.message > .read-check{
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
 }
 
 @keyframes appendMessageFromRight {
     0% {
         opacity: 0;
-        transform: translateX(40px);
+        transform: translateX(20px);
     }
     100% {
         opacity: 1;
@@ -309,13 +318,13 @@ body {
 }
 
 .messages .message-container:nth-child(odd) .message{
-    animation: appendMessageFromLeft 0.8s forwards;
+    animation: appendMessageFromLeft 0.3s forwards;
 }
 
 @keyframes appendMessageFromLeft {
     0% {
         opacity: 0;
-        transform: translateX(-40px);
+        transform: translateX(-20px);
     }
     100% {
         opacity: 1;

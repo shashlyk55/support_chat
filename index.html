@@ -57,6 +57,12 @@
                     <div class="message-group">
                         <div class="message">
                             Hello, I’m experiencing an issue with my account. Could you please help me resolve it?
+                            <div class="read-check">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 5.09904L3.86205 10L1 7.22524L2.13433 6.11744L3.86205 7.82647L7.86748 4L9 5.09904Z" fill="#F7F8F8"/>
+                                    <path d="M13 5.09904L7.86205 10L5 7.22524L6.13433 6.11744L7.86205 7.82647L11.8675 4L13 5.09904Z" fill="#F7F8F8"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                     <div class="sender">
@@ -87,9 +93,21 @@
                     <div class="message-group">
                         <div class="message">
                             Sure.
+                            <div class="read-check">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 5.09904L3.86205 10L1 7.22524L2.13433 6.11744L3.86205 7.82647L7.86748 4L9 5.09904Z" fill="#F7F8F8"/>
+                                    <path d="M13 5.09904L7.86205 10L5 7.22524L6.13433 6.11744L7.86205 7.82647L11.8675 4L13 5.09904Z" fill="#F7F8F8"/>
+                                </svg>
+                            </div>
                         </div>
                         <div class="message">
-                            Every time I try, I receive an “incorrect password” message, even though I’m sure the password is correct.                        
+                            Every time I try, I receive an “incorrect password” message, even though I’m sure the password is correct.  
+                            <div class="read-check">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 5.09904L3.86205 10L1 7.22524L2.13433 6.11744L3.86205 7.82647L7.86748 4L9 5.09904Z" fill="#F7F8F8"/>
+                                    <path d="M13 5.09904L7.86205 10L5 7.22524L6.13433 6.11744L7.86205 7.82647L11.8675 4L13 5.09904Z" fill="#F7F8F8"/>
+                                </svg>
+                            </div>                      
                         </div>
                     </div>
                     <div class="sender">
@@ -104,7 +122,7 @@
                 <div class="message-container" data-support-team-msg>
                     <div class="message-group">
                         <div class="message">
-                            Thank you for the information. Have you tried resetting your password yet?  
+                            Thank you for the information. Have you tried resetting your password yet?      
                             <!-- Pinned voice message -->  
                             <!--<div class="voice-msg-container">
                                 <div class="play-voice-msg-btn">
@@ -366,12 +384,18 @@
         console.log('send message');
         
         const chatContainer = document.getElementById('chat-container')
-        const messageText = inputMessage.value.trim()
+        const text = inputMessage.value.trim()
 
-        if(messageText === '') return
+        if(text === '') return
 
         const message = createElement({ class: 'message' })
-        message.textContent = messageText
+        message.textContent = text
+
+        const messageReadCheck = createElement({ class: 'read-check' })
+        messageReadCheck.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 5.09904L5.86205 10L3 7.22524L4.13433 6.11744L5.86205 7.82647L9.86748 4L11 5.09904Z" fill="#B4B7C5"/>
+                                    </svg>`
+        message.appendChild(messageReadCheck)
 
         const currentDate = new Date()
         const hours = String(currentDate.getHours()).padStart(2, '0')
